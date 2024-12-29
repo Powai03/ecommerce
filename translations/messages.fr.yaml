@@ -1,0 +1,80 @@
+# translations/messages.fr.yaml
+
+app:
+  account: "Mon compte"
+  cart: "Panier"
+  products: "Produits"
+  dashboard: "Dashboard"
+  logout: "Se déconnecter"
+  login: "Se connecter"
+  register: "S'inscrire"
+
+flash:
+  success: "Succès"
+  error: "Erreur"
+  warning: "Avertissement"
+
+register:
+    title: "S'inscrire"
+    email: "Email"
+    password: "Mot de passe"
+    agreeTerms: "Accepter les termes"
+    prenom: "Prénom"
+    nom: "Nom"
+    registerButton: "S'inscrire"
+
+product:
+    quantity: "Quantité"
+    add_to_cart: "Ajouter au panier"
+    delete: "Supprimer"
+    edit: "Modifier"
+    back_to_list: "Retour à la liste des produits"
+    list_title: "Liste des produits"
+    no_products: "Aucun produit"
+    create_product: "Créer un produit"
+    edit_title: "Modifier le produit"
+    back_to_product_list: "Retour à la liste des produits"
+
+dashboard:
+    title: "Tableau de bord"
+    unpaid_carts: "Paniers non achetés"
+    cart_number: "Numéro du panier"
+    user: "Utilisateur"
+    content: "Contenu"
+    quantity: "Quantité"
+    registered_users: "Utilisateurs inscrits"
+
+cart:
+    title: "Votre panier"
+    product: "Produit"
+    quantity: "Quantité"
+    unit_price: "Prix unitaire"
+    total: "Total"
+    action: "Action"
+    remove: "Retirer"
+    cart_total: "Total du panier"
+    empty_cart: "Votre panier est vide."
+    continue_shopping: "Continuer vos achats"
+    checkout: "Passer la commande"
+
+account:
+    title: "Mon compte"
+    edit_profile: "Modifier mon profil"
+    order_history: "Historique de mes commandes"
+    no_orders: "Aucune commande passée."
+    order: "Commande"
+    amount: "Montant"
+    order_date: "Date de la commande"
+
+profile:
+    title: "Modifier mon profil"
+    update_button: "Mettre à jour"
+
+order_details:
+    title: "Détails de la commande"
+    product: "Produit"
+    quantity: "Quantité"
+    unit_price: "Prix unitaire"
+    total: "Total"
+    date: "Date"
+    order_total: "Total de la commande"

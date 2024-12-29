@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="productdetail">
+		<div class="productdetailimage">
+			{% if product.photo is not empty %}
+				<img src="{{ asset('uploads/' ~ product.photo) }}" alt="{{ product.name }}">
+			{% endif %}
+		</div>
+		<div class="productdetailtext">
+			<h1>{{ product.name }}</h1>
+			<p>Description:
+				{{ product.description }}</p>
+			<p>Prix:
+				{{ product.price }}€</p>
+			<p>Stock:
+				{{ product.stock }}</p>
+			<form action="{{ path('app_add_to_cart', {id: product.id}) }}" method="POST">
+				<label for="quantity">{{ 'product.quantity'|trans }}
+					:</label>
+				<input type="number" id="quantity" name="quantity" min="1" value="1" required>
+				<input type="hidden" name="csrf" value="{{ csrf_token('add_to_cart' ~ product.id) }}">
+				<button type="submit">{{ 'product.add_to_cart'|trans }}</button>
+			</form>
+
+			{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN') %}
+				<form action="{{ path('app_product_delete', {id: product.id}) }}" method="POST">
+					<input type="hidden" name="csrf" value="{{ csrf_token('delete' ~ product.id) }}">
+					<button type="submit" value="{{ 'product.delete'|trans }}">
+						{{ 'product.delete'|trans }}</button>
+				</form>
+				<form action="{{ path('app_product_edit', {id: product.id}) }}" method="GET">
+					<button type="submit">{{ 'product.edit'|trans }}</button>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+	<a href="{{ path('app_product') }}" class="btn btn-secondary">{{ 'product.back_to_list'|trans }}</a>
+
+{% endblock %}

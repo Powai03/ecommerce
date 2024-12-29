@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.edit_title' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'product.edit_title' | trans }}</h1>
+
+    {{ form_start(edit_produit) }}
+        {{ form_widget(edit_produit) }}
+    {{ form_end(edit_produit) }}
+
+    <a href="{{ path('app_product') }}" class="btn btn-secondary">{{ 'product.back_to_product_list' | trans }}</a>
+{% endblock %}

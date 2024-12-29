@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'dashboard.title' | trans }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'dashboard.title' | trans }}</h1>
+
+<h2>{{ 'dashboard.unpaid_carts' | trans }}</h2>
+<ul>
+    {% for panier in paniers %}
+        <li>
+            {{ 'dashboard.cart_number' | trans }} : {{ panier.numero }} <br>
+            {{ 'dashboard.user' | trans }} : {{ panier.utilisateur }} <br>
+            {{ 'dashboard.content' | trans }} :
+            <ul>
+                {% for contenu in panier.contenu %}
+                    <li>{{ contenu.product.name }} ({{ 'dashboard.quantity' | trans }} : {{ contenu.quantite }})</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+<h2>{{ 'dashboard.registered_users' | trans }}</h2>
+<ul>
+    {% for user in users %}
+        <li>{{ user.email }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}

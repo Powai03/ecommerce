@@ -1,0 +1,81 @@
+# translations/messages.en.yaml
+
+app:
+  account: "My Account"
+  cart: "Cart"
+  products: "Products"
+  dashboard: "Dashboard"
+  logout: "Logout"
+  login: "Login"
+  register: "Register"
+
+flash:
+  success: "Success"
+  error: "Error"
+  warning: "Warning"
+
+register:
+    title: "Register"
+    email: "Email"
+    password: "Password"
+    agreeTerms: "Agree to the terms"
+    prenom: "First name"
+    nom: "Last name"
+    registerButton: "Register"
+
+
+product:
+    quantity: "Quantity"
+    add_to_cart: "Add to cart"
+    delete: "Delete"
+    edit: "Edit"
+    back_to_list: "Back to product list"
+    list_title: "Product list"
+    no_products: "No products"
+    create_product: "Create a product"
+    edit_title: "Edit Product"
+    back_to_product_list: "Back to product list"
+
+dashboard:
+    title: "Dashboard"
+    unpaid_carts: "Unpaid carts"
+    cart_number: "Cart number"
+    user: "User"
+    content: "Content"
+    quantity: "Quantity"
+    registered_users: "Registered users"
+
+cart:
+    title: "Your cart"
+    product: "Product"
+    quantity: "Quantity"
+    unit_price: "Unit price"
+    total: "Total"
+    action: "Action"
+    remove: "Remove"
+    cart_total: "Cart total"
+    empty_cart: "Your cart is empty."
+    continue_shopping: "Continue shopping"
+    checkout: "Checkout"
+
+account:
+    title: "My account"
+    edit_profile: "Edit my profile"
+    order_history: "Order history"
+    no_orders: "No orders placed."
+    order: "Order"
+    amount: "Amount"
+    order_date: "Order date"
+
+profile:
+    title: "Edit my profile"
+    update_button: "Update"
+
+order_details:
+    title: "Order details"
+    product: "Product"
+    quantity: "Quantity"
+    unit_price: "Unit price"
+    total: "Total"
+    date: "Date"
+    order_total: "Order total"

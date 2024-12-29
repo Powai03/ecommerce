@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.list_title' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'product.list_title' | trans }}</h1>
+
+    <div class="list-product">
+        {% for p in products %}
+            <section class="product">
+                <a href="{{ path('app_product_show', {id: p.id}) }}">
+                    
+                    {% if p.photo is not empty %}
+                        <img src="{{ asset('uploads/' ~ p.photo) }}" alt="{{ p.name }}" >
+                    {% endif %}
+                    <h2>{{ p.name }}</h2>
+                    <p>{{ p.price }}€</p>
+                </a>
+            </section>
+        {% else %}
+            <p>{{ 'product.no_products' | trans }}</p>
+        {% endfor %}
+    </div>
+
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN') %}
+        
+        <div class="form">
+         <h2>{{ 'product.create_product' | trans }}</h2>   
+        {{ form(ajout_produit) }}
+        </div>
+    {% endif %}
+{% endblock %}

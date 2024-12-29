@@ -1,0 +1,80 @@
+# translations/messages.es.yaml
+
+app:
+  account: "Mi cuenta"
+  cart: "Carrito"
+  products: "Productos"
+  dashboard: "Panel de control"
+  logout: "Cerrar sesión"
+  login: "Iniciar sesión"
+  register: "Registrarse"
+
+flash:
+  success: "Éxito"
+  error: "Error"
+  warning: "Advertencia"
+
+register:
+    title: "Registrarse"
+    email: "Correo electrónico"
+    password: "Contraseña"
+    agreeTerms: "Aceptar los términos"
+    prenom: "Nombre"
+    nom: "Apellido"
+    registerButton: "Registrarse"
+
+product:
+    quantity: "Cantidad"
+    add_to_cart: "Añadir al carrito"
+    delete: "Eliminar"
+    edit: "Editar"
+    back_to_list: "Volver a la lista de productos"  
+    list_title: "Lista de productos"
+    no_products: "No hay productos"
+    create_product: "Crear un producto"
+    edit_title: "Editar producto"
+    back_to_product_list: "Volver a la lista de productos"
+
+dashboard:
+    title: "Tablero de control"
+    unpaid_carts: "Cestas no compradas"
+    cart_number: "Número de la cesta"
+    user: "Usuario"
+    content: "Contenido"
+    quantity: "Cantidad"
+    registered_users: "Usuarios registrados"
+
+cart:
+    title: "Tu carrito"
+    product: "Producto"
+    quantity: "Cantidad"
+    unit_price: "Precio unitario"
+    total: "Total"
+    action: "Acción"
+    remove: "Eliminar"
+    cart_total: "Total del carrito"
+    empty_cart: "Tu carrito está vacío."
+    continue_shopping: "Continuar comprando"
+    checkout: "Realizar el pedido"
+
+account:
+    title: "Mi cuenta"
+    edit_profile: "Editar mi perfil"
+    order_history: "Historial de mis pedidos"
+    no_orders: "No se ha realizado ningún pedido."
+    order: "Pedido"
+    amount: "Monto"
+    order_date: "Fecha del pedido"
+
+profile:
+    title: "Editar mi perfil"
+    update_button: "Actualizar"
+
+order_details:
+    title: "Detalles del pedido"
+    product: "Producto"
+    quantity: "Cantidad"
+    unit_price: "Precio unitario"
+    total: "Total"
+    date: "Fecha"
+    order_total: "Total del pedido"

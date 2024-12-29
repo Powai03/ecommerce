@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'order_details.title' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'order_details.title' | trans }} #{{ panier.id }}{{ panier.dateAchat|date('d/m/Y') }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{{ 'order_details.product' | trans }}</th>
+                <th>{{ 'order_details.quantity' | trans }}</th>
+                <th>{{ 'order_details.unit_price' | trans }}</th>
+                <th>{{ 'order_details.total' | trans }}</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for contenu in panier.contenuPaniers %}
+                <tr>
+                    <td>{{ contenu.product.name }}</td>
+                    <td>{{ contenu.quantite }}</td>
+                    <td>{{ contenu.product.price|number_format(2, ',', ' ') }} €</td>
+                    <td>{{ (contenu.quantite * contenu.product.price)|number_format(2, ',', ' ') }} €</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr>
+    <p><strong>{{ 'order_details.order_total' | trans }}:</strong> 
+        {{ panier.contenuPaniers|reduce((total, contenu) => total + (contenu.quantite * contenu.product.price), 0)|number_format(2, ',', ' ') }} €
+    </p>
+{% endblock %}

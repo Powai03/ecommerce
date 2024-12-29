@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'account.title' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'account.title' | trans }}</h1>
+    <a href="{{ path('app_account_edit') }}" class="btn btn-primary">{{ 'account.edit_profile' | trans }}</a>
+
+    <h2>{{ 'account.order_history' | trans }}</h2>
+    {% if commandes is not empty %}
+        <ul>
+        {% for commande in commandes %}
+            <li>
+                <a href="{{ path('app_account_order_show', {id: commande.commande.id}) }}">
+                    {{ 'account.order' | trans }} #{{ commande.commande.id }} - {{ commande.montant|number_format(2, ',', ' ') }} €
+                    -  {{ commande.commande.dateAchat|date('d/m/Y') }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ 'account.no_orders' | trans }}</p>
+    {% endif %}
+{% endblock %}

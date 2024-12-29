@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'cart.title' | trans }}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ 'cart.title' | trans }}</h1>
+
+	{% if panier and panier.contenuPaniers|length > 0 %}
+		
+			<div class="panier"><table>
+				<thead>
+					<tr>
+						<th>{{ 'cart.product' | trans }}</th>
+						<th>{{ 'cart.quantity' | trans }}</th>
+						<th>{{ 'cart.unit_price' | trans }}</th>
+						<th>{{ 'cart.total' | trans }}</th>
+						<th>{{ 'cart.action' | trans }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for contenu in panier.contenuPaniers %}
+						<tr>
+							<td>
+								<a href="{{ path('app_product_show', {id: contenu.product.id}) }}">
+									{{ contenu.product.name }}
+								</a>
+							</td>
+							<td>{{ contenu.quantite }}</td>
+							<td>{{ contenu.product.price|number_format(2, ',', ' ') }}
+								€</td>
+							<td>{{ (contenu.quantite * contenu.product.price)|number_format(2, ',', ' ') }}
+								€</td>
+							<td>
+								<!-- Formulaire de suppression -->
+								<form action="{{ path('app_cart_remove', {id: contenu.id}) }}" method="POST" style="display:inline;">
+									<input type="hidden" name="csrf" value="{{ csrf_token('remove_from_cart' ~ contenu.id) }}">
+									<button type="submit" class="btn btn-danger">{{ 'cart.remove' | trans }}</button>
+								</form>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			
+		</table>
+		<hr>
+		<p>
+			<strong>{{ 'cart.cart_total' | trans }}
+				:</strong>
+			{{ panier.contenuPaniers|reduce((total, contenu) => total + (contenu.quantite * contenu.product.price), 0)|number_format(2, ',', ' ') }}
+			€
+		</p>
+		<form action="{{ path('app_cart_checkout') }}" method="POST">
+			<button type="submit" class="btn btn-primary">{{ 'cart.checkout' | trans }}</button>
+		</form>
+
+	{% else %}
+		<p>{{ 'cart.empty_cart' | trans }}</p>
+	{% endif %}
+
+	<a href="{{ path('app_product') }}">{{ 'cart.continue_shopping' | trans }}</a>
+    </div>
+{% endblock %}

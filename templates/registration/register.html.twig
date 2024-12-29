@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+</html>
+
+
+
+{% block body %}
+    <h1>{{ 'register.title'|trans }}</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, { 'label': 'register.email'|trans }) }}
+        {{ form_row(registrationForm.plainPassword, { 'label': 'register.password'|trans }) }}
+        {{ form_row(registrationForm.agreeTerms, { 'label': 'register.agreeTerms'|trans }) }}
+        {{ form_row(registrationForm.prenom, { 'label': 'register.prenom'|trans }) }}
+        {{ form_row(registrationForm.nom, { 'label': 'register.nom'|trans }) }}
+
+        <button type="submit" class="btn">{{ 'register.registerButton'|trans }}</button>
+        <button class="btn btn-lg btn-primary" type="button" onclick="window.location.href='{{ path('app_login') }}'">
+            {{ 'app.login'|trans }}
+        </button>
+    {{ form_end(registrationForm) }}
+        
+{% endblock %}

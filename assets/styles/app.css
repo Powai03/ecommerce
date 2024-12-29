@@ -1,3 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2{
+    font-weight: 600;
+    color:#4f7bfc; 
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+
 body {
-    background-color: skyblue;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.inp {
+    font-weight: 400;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #132;
+    border-radius: 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.inp:focus {
+    outline: none;
+}
+
+button {
+    background-color: #4f7bfc;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.875;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.signup {
+    font-weight: 600;
+    width: 100%;
+    padding: 0 7.5px;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup a {
+    color: #4f7bfc;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 20px;
+}
+form {
+    width: 40%;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.list-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.product {
+    width: 23%;
+    height:300px; /* Définir une hauteur fixe pour chaque produit */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    height: 100%;
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    max-width: 100%; 
+    margin-bottom: 10px;
+}
+header {
+    background-color: #4f7bfc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+nav ul .pages, nav ul .admin {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    width: max-content;
+    height: 100%; /* Make the li height match the header height */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+nav ul li:hover {
+    background-color: white; /* White background on hover */
+    
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px; /* Add padding for a bit of space inside */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li:hover a {
+    color: #4f7bfc; /* Change text color to match header when hovering */
+}
+
+
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+.productdetail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+}
+.productdetailimage{
+    width: 50%;
+    height: 100%;
+}   
+.productdetailimage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    max-width: 100%; 
+    margin-bottom: 10px;
+}
+.productdetailtext{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    width: 50%;
+    padding: 50px;
+    height: 100%;
+}
+h1{
+    margin-top: 10px;
+}
+.panier {
+    margin-top: 20px;
+    width: 100%;
+    margin: 20px ;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+.panier table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.panier thead {
+    width: 100%;
+}
+
+.panier th, .panier td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.panier th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.panier tr:hover {
+    background-color: #f9f9f9; 
+}
+
+.panier td a {
+    color: #4f7bfc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.panier td a:hover {
+    color: #132;
+}
+
+.panier td button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.panier td button:hover {
+    background-color: #c0392b;
+}
+
+.panier p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.panier strong {
+    font-weight: bold;
+}
+
+.panier .btn-primary {
+    background-color: #4f7bfc;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.panier .btn-primary:hover {
+    background-color: #375aaf;
+}
+
+a {
+    display: inline-block;
+
+    color: #4f7bfc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
