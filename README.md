@@ -26,7 +26,7 @@ cd ecommerce
 ### 2️⃣ Installer les dépendances  
 ```bash
 composer install
-npm install  # Si des assets front-end sont gérés avec Webpack Encore
+npm install  
 ```
 
 ### 3️⃣ Configurer l’environnement  
