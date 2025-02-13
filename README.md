@@ -1,9 +1,65 @@
-# ecommerce
+# 🛒 E-Commerce - Plateforme fictive en Symfony
 
-Exercice dans le cadre de mon cursus à l'iim en 2e année
-Projet de site ecommerce grâce au framework Symfony
-Pour bien lancer le projet, vous devez être sur d'avoir soit importé la table sql fournie, soit avoir fait les migrations des entités
-Vous devez aussi modifier dans la table sql le role du premier utilisateur par exemple pour qu'il ait le role 'ROLE_SUPER_ADMIN' afin d'avoir toutes les fonctions, ou 'ROLE_ADMIN'pour une partie des fonctions
-Vous pouvez vous inscrire, vous connecter, ajouter des produits à la vente si admin, les retirer, ajouter un item au panier et le supprimer, et passer commande
-enfin vous pouvez consulter vos commandes et modifier votre profil 
-le role super admin permet de consulter tous les paniers non commandés et les utilisateurs triés du plus recent au plus ancien
+Bienvenue sur le dépôt de mon projet **e-commerce** !  
+Il s'agit d'une plateforme fictive développée avec **Symfony**, permettant de gérer des produits, des commandes et des utilisateurs.  
+
+⚠️ **Note :** Ce projet est en développement et ne représente pas une plateforme e-commerce réelle.  
+
+## 🚀 Technologies utilisées  
+
+- 🐘 **PHP 8+** – Langage backend  
+- 🎵 **Symfony 6+** – Framework MVC robuste et évolutif  
+- 🗄️ **Doctrine ORM** – Gestion de la base de données   
+- 🛢️ **MySQL** – Base de données 
+- 🔐 **Security Bundle** – Gestion des utilisateurs et de l'authentification  
+
+## 📦 Installation & Exécution  
+
+Si vous souhaitez exécuter ce projet en local, voici les étapes :  
+
+### 1️⃣ Cloner le dépôt  
+```bash
+git clone https://github.com/Powai03/ecommerce.git
+cd ecommerce
+```
+
+### 2️⃣ Installer les dépendances  
+```bash
+composer install
+npm install  # Si des assets front-end sont gérés avec Webpack Encore
+```
+
+### 3️⃣ Configurer l’environnement  
+Copiez le fichier `.env` et configurez votre base de données :  
+```bash
+cp .env .env.local
+```
+Modifiez ensuite `.env.local` pour ajouter vos informations de connexion à la base de données :  
+```
+DATABASE_URL="mysql://user:password@127.0.0.1:3306/ecommerce"
+```
+
+### 4️⃣ Créer la base de données et exécuter les migrations  
+```bash
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+```
+
+### 5️⃣ Lancer le serveur Symfony  
+```bash
+symfony server:start
+```
+L'application sera accessible sur **http://127.0.0.1:8000**.  
+
+## 📌 Fonctionnalités  
+
+✅ Ajout, modification et suppression de produits  
+✅ Gestion des utilisateurs et authentification  
+✅ Panier d'achat et système de commande  
+✅ Interface responsive avec **Tailwind CSS**  
+✅ Sécurisation des routes et permissions  
+
+## 🚧 Statut  
+
+Le projet est **en développement**. De nouvelles fonctionnalités pourront être ajoutées prochainement.  
+
